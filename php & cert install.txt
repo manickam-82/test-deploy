@@ -1,0 +1,36 @@
+ssh -i manvy_prp.pem ec2-user@52.204.192.151
+
+sudo yum install httpd - install apache
+
+sudo chkconfig httpd on-automatic restart when machine on
+
+sudo amazon-linux-extras install php7.2 -install php 7.2
+
+sudo chown -R ec2-user:apache /var/www
+
+sudo chmod 2775 /var/www
+
+sudo yum install git - github installation
+
+sudo git clone https://github.com/engbalaji/epv1jul20.git-need to add repostery
+
+need to authenticate
+
+sudo mv epv1jul20 redis20-host name change commend
+
+find /var/www -type d -exec sudo chmod 2775 {} \;-permission for apache
+
+find /var/www -type f -exec sudo chmod 0664 {} \;-permission for apache
+
+ssl certificate
+
+sudo yum install -y mod_ssl
+
+
+cd /etc/pki/tls/certs
+
+sudo ./make-dummy-cert localhost.crt
+
+
+/etc/httpd/conf.d/ssl.conf 
+SSLCertificateKeyFile /etc/pki/tls/private/localhost.key need to commit
